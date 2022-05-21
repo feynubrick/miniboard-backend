@@ -1,1 +1,1 @@
-# project-whiteboard-backend
+# project-miniboard-backend
