@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  board-db:
+    env_file:
+      - ./board-db.env
+    image: 'postgres:14.3'
+    volumes:
+      - board-db-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+volumes:
+  board-db-data:
+    driver: local
