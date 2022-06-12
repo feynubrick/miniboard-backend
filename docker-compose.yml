@@ -2,7 +2,7 @@ version: '3.9'
 services:
   board-db:
     env_file:
-      - ./envs/board-db.env
+      - ./.env
     image: 'postgres:14.3'
     volumes:
       - board-db-data:/var/lib/postgresql/data
@@ -11,7 +11,7 @@ services:
   miniboard-backend:
     build: .
     env_file:
-      - ./envs/backend.env
+      - ./env
     ports:
       - 3333:3333
 volumes:
