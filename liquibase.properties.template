@@ -1,0 +1,5 @@
+changelog-file: ./adaptors/db/main/changelog/changelog.sql
+url: jdbc:postgresql://HOST_URL:PORT/DATABASE
+username: USERNAME
+password: PASSWORD
+liquibase.hub.mode=off
