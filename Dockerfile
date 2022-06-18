@@ -4,7 +4,6 @@ WORKDIR /app
 COPY package.json /app
 COPY package-lock.json /app
 
-RUN npm install -g npm
 RUN npm install --only=prod
 
 COPY . /app
