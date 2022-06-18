@@ -1,23 +1,23 @@
 version: '3.9'
 services:
-  miniboard-main-db:
+  main-db:
     env_file:
       - .env
     environment:
-      - POSTGRES_DB=${MINIBOARD_MAIN_DB_DATABASE}
-      - POSTGRES_USER=${MINIBOARD_MAIN_DB_USERNAME}
-      - POSTGRES_PASSWORD=${MINIBOARD_MAIN_DB_PASSWORD}
+      - POSTGRES_USER=${MAIN_DB_USERNAME}
+      - POSTGRES_PASSWORD=${MAIN_DB_PASSWORD}
+      - POSTGRES_DB=${MAIN_DB_DATABASE}
     image: 'postgres:14.3'
     volumes:
-      - miniboard-main-db-data:/var/lib/postgresql/data
+      - main-db-data:/var/lib/postgresql/data
     ports:
-      - ${MINIBOARD_MAIN_DB_PORT}:5432
-  miniboard-main-backend:
+      - ${MAIN_DB_PORT}:5432
+  main-backend:
     build: .
     env_file:
       - .env
     ports:
-      - ${MINIBOARD_MAIN_BACKEND_HTTP_PORT}:${MINIBOARD_MAIN_BACKEND_HTTP_PORT}
+      - ${BACKEND_HTTP_PORT}:${BACKEND_HTTP_PORT}
 volumes:
-  miniboard-main-db-data:
+  main-db-data:
     driver: local
