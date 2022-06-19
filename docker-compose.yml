@@ -12,12 +12,37 @@ services:
       - main-db-data:/var/lib/postgresql/data
     ports:
       - ${MAIN_DB_PORT}:5432
+    networks:
+      - backend
+  
+  main-db-migration:
+    image: 'liquibase/liquibase:4.11.0'
+    volumes:
+      - ./liquibase.properties:/liquibase/liquibase.properties
+      - ./adaptors/db/main/changelog/changelog.sql:/liquibase/changelog.sql
+    profiles:
+      - tools
+    depends_on:
+      - main-db
+    networks:
+      - backend
+    command: liquibase update
+
   main-backend:
     build: .
     env_file:
       - .env
     ports:
       - ${BACKEND_HTTP_PORT}:${BACKEND_HTTP_PORT}
+    networks:
+      - backend
+    depends_on:
+      - main-db
+
 volumes:
   main-db-data:
     driver: local
+
+networks:
+  backend:
+    driver: bridge
