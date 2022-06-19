@@ -19,7 +19,7 @@ services:
     image: 'liquibase/liquibase:4.11.0'
     volumes:
       - ./liquibase.properties:/liquibase/liquibase.properties
-      - ./adaptors/db/main/changelog/changelog.sql:/liquibase/changelog.sql
+      - ./adaptors/db/main/changelog/_root.sql:/liquibase/changelog.sql
     profiles:
       - tools
     depends_on:
