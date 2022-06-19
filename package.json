@@ -34,6 +34,7 @@
     "*.js": [
       "eslint --config .eslintrc.json --cache --fix",
       "prettier --config .prettierrc.json --write"
-    ]
+    ],
+    "*.json": "prettier --write"
   }
 }
