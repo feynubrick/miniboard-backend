@@ -1,4 +1,4 @@
-changelog-file: ./adaptors/db/main/changelog/changelog.sql
+changelog-file: ./changelog.sql
 url: jdbc:postgresql://main-db:PORT/DATABASE
 username: USERNAME
 password: PASSWORD
