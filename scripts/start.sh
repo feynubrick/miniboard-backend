@@ -2,4 +2,9 @@
 echo 'running start.sh'
 
 # start node server
-node server.js
+if [[ $NODE_ENV = production ]]
+then
+    node server.js
+else
+    npx nodemon server.js
+fi

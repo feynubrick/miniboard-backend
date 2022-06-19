@@ -39,6 +39,8 @@ services:
       - backend
     depends_on:
       - main-db
+    volumes:
+      - ./:/app
 
 volumes:
   main-db-data:
