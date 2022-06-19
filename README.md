@@ -1,5 +1,14 @@
 # project-miniboard-backend
 
+# Development Environment
+You need Node.js installed on your dev machine.
+Any version above 16.15 should be enough. But I recommend you to install version 16.15 since it is running on the docker container.
+
+To configure dev environment properly, run following command:
+```bash
+$ npm install
+```
+
 # How to build
 ## Requirements
 1. Docker
