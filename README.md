@@ -26,7 +26,7 @@ $ docker compose up -d
 ## Writing changelog file
 Add [a raw SQL script for Liquibase](https://docs.liquibase.com/concepts/changelogs/sql-format.html) and save it in `adaptors/db/main/changelogs`. Please name it in the format of `####.comments-to-represent-changelog.sql`. And copy and overwrite the whole content of the file to `_root.sql` in the same directory.
 
-Use the following command to update to the db
+Use the following command to update the db
 ```bash
 $ docker compose up main-db-migration
 ```
