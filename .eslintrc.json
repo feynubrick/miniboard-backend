@@ -1,0 +1,19 @@
+{
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "extends": ["eslint:recommended", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "warn",
+    "valid-typeof": "error",
+    "eqeqeq": "error",
+    "no-unused-vars": "error",
+    "no-shadow": "error",
+    "no-var": "error"
+  }
+}
